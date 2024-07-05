@@ -12,4 +12,5 @@ def censor(input_file, output_file):
 
 censor("resume.tex", "resume_pub.tex")
 subprocess.run(["pdflatex", "resume_pub.tex"])
-
+subprocess.run(["rm", "-f", "resume_pub.aux",  "resume_pub.log",  "resume_pub.out", "resume_pub.tex"])
+subprocess.run(["mv", "resume_pub.pdf", "docs/"])
