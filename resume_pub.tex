@@ -1,0 +1,160 @@
+\documentclass[a4paper]{article}
+    \usepackage{fullpage}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{textcomp}
+    \usepackage{enumitem}
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+    \textheight=10in
+    \pagestyle{empty}
+    \raggedright
+    \usepackage[left=0.8in,right=0.8in,bottom=0.8in,top=0.8in]{geometry}
+    \usepackage{hyperref}
+	\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    }
+
+    %\renewcommand{\encodingdefault}{cg}
+%\renewcommand{\rmdefault}{lgrcmr}
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+
+% DEFINITIONS FOR RESUME %%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\area} [2] {
+    \vspace*{-9pt}
+    \begin{verse}
+        \textbf{#1}   #2
+    \end{verse}
+}
+
+\newcommand{\lineunder} {
+    \vspace*{-8pt} \\
+    \hspace*{-18pt} \hrulefill \\
+}
+
+\newcommand{\header} [1] {
+    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    \vspace*{-6pt} \lineunder
+}
+
+\newcommand{\employer} [3] {
+    { \textbf{#1} (#2)\\ \underline{\textbf{\emph{#3}}}\\  }
+}
+
+\newcommand{\contact} [3] {
+    \vspace*{-10pt}
+    \begin{center}
+        {\Huge \scshape {#1}}\\
+        #2 \\ #3
+    \end{center}
+    \vspace*{-8pt}
+}
+
+\newenvironment{achievements}{
+    \begin{list}
+        {$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}
+    \end{list}
+}
+
+\newcommand{\schoolwithcourses} [4] {
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+    \vspace*{5pt}
+}
+
+\newcommand{\school} [4] {
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+}
+% END RESUME DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%
+
+    \begin{document}
+\vspace*{-40pt}
+
+    
+
+%==== Profile ====%
+\vspace*{-10pt}
+\begin{center}
+	{\Huge \scshape {Sahil Sinha}}\\
+	  dev.sahilsinha@gmail.com $\cdot$ CENSORED $\cdot$ \href{https://www.linkedin.com/in/sayhilel/}{linkedIn.com/in/sayhilel} $\cdot$ \href{https://github.com/sayhilel}{github.com/sayhilel}\\ $\cdot$ \href{https://sayhilel.com/}{Portfolio}\\
+\end{center}
+
+%==== Education ====%
+\header{Education}
+\textbf{Arizona State University}\hfill Tempe, AZ\\
+B.S Computer Science \textit{GPA: 4.0} \hfill Aug 2022 - May 2026\\
+
+%==== Experience ====%
+\header{Experience}
+\vspace{1mm}
+
+\textbf{Ira A Fulton School Of Engineering} \hfill Tempe, AZ\\
+\textit{Teaching Assistant} \hfill Jan 2024 - Present\\
+\begin{itemize} [label=\tiny$\bullet$]\itemsep 0.005pt
+\item Acted as a teaching assistant for a programming paradigms class, guiding students in comprehending various programming paradigms such as functional, object-oriented programming (OOP), logic, and declarative, with a focus on languages like C++, JavaScript, and Prolog.
+\item 
+Hosted a C++ workshop, integrating debugging techniques with gdb and showcasing numConverter, a model program designed to facilitate conversion between decimal, binary, or hexadecimal numbers, enhancing participants' understanding of debugging principles.
+\end{itemize}
+
+\textbf{ASU Automation Projects/ EPICS} \hfill Tempe, AZ\\
+\textit{Testing Intern \& Front-End Dev} \hfill Jan 2023 - Aug 2023\\
+\vspace{1mm}
+\begin{itemize} [label=\tiny$\bullet$]\itemsep 0.005pt
+\item 
+Assisted development of a visually appealing and user-friendly front end design for an Automated Attendance System for over 80,000 ASU students using ReactJS and Figma.	
+	\item Collaborated with the dynamic testing team, actively participating in the evaluation of project functionalities. Contributed valuable insights and meticulous feedback, playing a pivotal role in refining the comprehensive design before the deployment of the project.
+\end{itemize}
+
+\header{Personal Projects}
+{\textbf{Say-hi}} {\sl GO, Fibre, HTMX, JavaScript, HTML, CSS, Docker} \hfill \href{https://sayhilel.com/}{sayhilel.com}
+\begin{itemize} [label=\tiny$\bullet$]\itemsep 0.005pt
+	\item Designed a portfolio website emulating a desktop environment, featuring an OSX-inspired terminal app with an "About Me" page, a virtual TUI interface for showcasing projects, and a contact form, all navigated via terminal commands and keystrokes.
+	\item Implemented server-side rendering with AJAX calls in Go and Fiber, utilizing Fiber's efficiency in API development and htmx responses for enhanced speed compared to traditional JSON response frameworks deployed on google cloud run using docker.
+\end{itemize}
+\vspace*{1mm}
+\textbf{MPAC} \textsl{Rust, Tokio, Clap} \hfill \href{https://github.com/sayhilel/mpac}{github.com/sayhilel/mpac}
+\begin{itemize} [label=\tiny$\bullet$]\itemsep 0.005pt
+  \item Developed a command-line interface (CLI) tool with a simple user interface to streamline the process of asynchronously updating multiple repositories with a single command.
+  \item Utilized Rust's type and memory safety along with Tokio's asynchronicity to perform actions simultaneously, achieving up to 70\% reduction in update time.
+\end{itemize}
+\vspace*{1mm}
+{\textbf{InQuizzitive}} {\sl Python, Flask, OpenCV, HAAR Cascade} \hfill \href{https://github.com/sayhilel/InQuizzitive}{github.com/sayhilel/InQuizzitive}
+\begin{itemize}[label=\tiny$\bullet$]\itemsep 0.005pt
+	\item Designed and implemented a Flask-based web 	application for a trivia game with seamless selection of answers during the trivia experience.
+    \item Integrated real-time player head tracking utilizing HAAR cascade and OpenCV for accurate detection and analysis of player movements. functionality.
+\end{itemize}
+\vspace*{1mm}
+
+
+\header{Skills \& Interest}
+\begin{tabular}{ l l }
+	Languages:    & Rust, Python, C++, C, Java , Go, JavaScript        \\
+	Technologies: & UNIX, Tokio, Fibre, Flask, Google Suite, HTMX    \\
+\end{tabular}
+\vspace{2mm}
+
+\header{Extracurricular \& recoginition}
+
+\textbf{CodePath Cybersecurity}\\
+Successfully concluded CodePath's Introduction to Cybersecurity course, gaining comprehensive insights into the CIA triad, encryption methodologies, network security principles, and operational security (OPSEC) strategies. Proficiently utilized a range of cybersecurity tools throughout the course.
+\\
+\vspace*{1mm}
+
+\textbf{Devil\textquotesingle{}s Invent}\\
+Attained the second place position in ASU\textquotesingle{}s Devil\textquotesingle{}s Invent Hackathon winning a prize of \$1,000 while serving as a pivotal core team member overseeing conceptual design and hardware systems.\\
+\vspace*{1mm}
+
+\textbf{Dean\textquotesingle{}s List}\\
+Attained a coveted and exceptional distinction on the Dean\textquotesingle{}s List four times in a row for outstanding academic achievements.\\
+
+
+\vspace*{1mm}
+ 
+\end{document}
