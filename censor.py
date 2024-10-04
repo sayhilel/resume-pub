@@ -2,7 +2,7 @@ import re
 import subprocess
 
 def censor(input_file, output_file):
-    phone_pattern = r'\(\d{3}\)\s*\d{3}-\d{4}'
+    phone_pattern = r'\d{3}-\d{3}-\d{4}'
     with open(input_file, 'r') as file:
         content = file.read()
     content = re.sub(phone_pattern, '', content)
