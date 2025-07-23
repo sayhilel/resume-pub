@@ -5,12 +5,12 @@ def censor(input_file, output_file):
     phone_pattern = r'\d{3}-\d{3}-\d{4}'
     with open(input_file, 'r') as file:
         content = file.read()
-    content = re.sub(phone_pattern, '', content)
+    content = re.sub(phone_pattern, 'xxx-xxx-xxxx', content)
     with open(output_file, 'w') as file:
         file.write(content)
 
 
-censor("./resume_original/Sahil_Sinha_Resume.tex", "resume_pub.tex")
-subprocess.run(["pdflatex", "resume_pub.tex"])
-subprocess.run(["rm", "-f", "resume_pub.aux",  "resume_pub.log",  "resume_pub.out", "resume_pub.tex"])
-subprocess.run(["mv", "resume_pub.pdf", "pub/"])
+censor("./original/Sahil_Sinha_Resume.tex", "Sahil_Sinha_Resume_Pub.tex")
+subprocess.run(["pdflatex", "Sahil_Sinha_Resume_Pub.tex"])
+subprocess.run(["rm", "-f", "Sahil_Sinha_Resume_Pub.aux",  "Sahil_Sinha_Resume_Pub.log",  "Sahil_Sinha_Resume_Pub.out", "Sahil_Sinha_Resume_Pub.tex"])
+subprocess.run(["mv", "Sahil_Sinha_Resume_Pub.pdf", "pub/"])
